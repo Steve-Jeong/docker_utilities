@@ -25,7 +25,7 @@ PATH 수정 후에는 새 터미널을 열거나 로그아웃/로그인하여 �
 
 ===
 
-	1. Docker Size : ds '^<none>'이라고 입력하면 $1을 입력받아 아래와 같이 실행하고 $1에 맞는 도커 이미지의 size를 출력함.
+1. Docker Size : ds '^<none>'이라고 입력하면 $1을 입력받아 아래와 같이 실행하고 $1에 맞는 도커 이미지의 size를 출력함.
 	```
 	#!/usr/bin/env bash
 	if [[ -n "$1" ]]; then
@@ -34,13 +34,15 @@ PATH 수정 후에는 새 터미널을 열거나 로그아웃/로그인하여 �
 	  docker images | awk '{sum+=$NF} {print $0} END {print sum, "MB"}'
 	fi
 	```
-	ln -s ds.sh ds로 소프트링크를 걸어서 .sh까지 타이핑 하지 않도록 함.
+
+ ln -s ds.sh ds로 소프트링크를 걸어서 .sh까지 타이핑 하지 않도록 함.
  
 	.zshrc에 
    ```
 	export PATH="/home/ubuntu/.utilities/:$PATH"
    ```
-	를 추가하여 어디에서나 유틸리티 스크립트가 실행되도록 함.
+
+를 추가하여 어디에서나 유틸리티 스크립트가 실행되도록 함.
 
 	2. dl $1을 입력하면 $1에 해당하는 docker image의 hostname을 출력. docker rmi $(dl $1)과 같이 사용.
    ```
